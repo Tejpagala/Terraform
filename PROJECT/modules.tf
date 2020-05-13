@@ -1,4 +1,4 @@
-module "management-vpc" {
-  source = "./MODULES/MANAGEMENT/VPC"
+module "management" {
+  source = "./MODULES/MANAGEMENT"
   
 }
