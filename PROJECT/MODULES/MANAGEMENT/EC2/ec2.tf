@@ -2,7 +2,7 @@ resource "aws_instance" "jenkins" {
   count                     = 1
   ami                       = "ami-0503db1a235b15e3f"
   instance_type             = "t2.small"
-  subnet_id                 = "${element(var.MANAGEMENT_SUBNET_IDS, count.index)}"
+  subnet_id                 = "element(var.MANAGEMENT_SUBNET_IDS, count.index)"
   vpc_security_group_ids    = ["${aws_security_group.default-ssh.id}", "${aws_security_group.default-jenkins.id}"]
 
   provisioner "remote-exec" {
